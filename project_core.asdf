@@ -1,0 +1,67 @@
+#ASDF 1.0.0
+#ASDF_STANDARD 1.6.0
+%YAML 1.1
+%TAG ! tag:stsci.edu:asdf/
+%TAG !weldx! asdf://weldx.bam.de/weldx/tags/
+--- !core/asdf-1.1.0
+asdf_library: !core/software-1.0.0 {author: The ASDF Developers, homepage: 'http://github.com/asdf-format/asdf',
+  name: asdf, version: 4.5.0}
+history:
+  extensions:
+  - !core/extension_metadata-1.0.0
+    extension_class: asdf.extension._manifest.ManifestExtension
+    extension_uri: asdf://asdf-format.org/core/extensions/core-1.6.0
+    manifest_software: !core/software-1.0.0 {name: asdf_standard, version: 1.5.0}
+    software: !core/software-1.0.0 {name: asdf, version: 4.5.0}
+  - !core/extension_metadata-1.0.0
+    extension_class: weldx.asdf.extension.WeldxExtension
+    extension_uri: asdf://weldx.bam.de/weldx/extensions/weldx-0.1.2
+    software: !core/software-1.0.0 {name: weldx, version: 0.7.2}
+geometry:
+  joint_type: Butt Joint
+  plate_length: !weldx!units/quantity-0.1.0 {value: 200, units: !weldx!units/units-0.1.0 millimeter}
+  plate_thickness: !weldx!units/quantity-0.1.0 {value: 6, units: !weldx!units/units-0.1.0 millimeter}
+  plate_width: !weldx!units/quantity-0.1.0 {value: 100, units: !weldx!units/units-0.1.0 millimeter}
+  sensor_labels: [TC_2mm, TC_5mm, TC_10mm]
+  thermo_distance: !weldx!units/quantity-0.1.0
+    value: !core/ndarray-1.1.0
+      data: [2.0, 5.0, 10.0]
+      datatype: float64
+      shape: [3]
+    units: !weldx!units/units-0.1.0 millimeter
+goldak:
+  a: !weldx!units/quantity-0.1.0 {value: 4.0, units: !weldx!units/units-0.1.0 millimeter}
+  b: !weldx!units/quantity-0.1.0 {value: 3.5, units: !weldx!units/units-0.1.0 millimeter}
+  cf: !weldx!units/quantity-0.1.0 {value: 3.0, units: !weldx!units/units-0.1.0 millimeter}
+  cr: !weldx!units/quantity-0.1.0 {value: 9.0, units: !weldx!units/units-0.1.0 millimeter}
+  ff: !weldx!units/quantity-0.1.0 {value: 0.6, units: !weldx!units/units-0.1.0 dimensionless}
+  fr: !weldx!units/quantity-0.1.0 {value: 1.4, units: !weldx!units/units-0.1.0 dimensionless}
+material:
+  common_name: Mild Steel (S235 / A36)
+  density: !weldx!units/quantity-0.1.0 {value: 7850, units: !weldx!units/units-0.1.0 kilogram
+      / meter ** 3}
+  melting_point: !weldx!units/quantity-0.1.0 {value: 1510, units: !weldx!units/units-0.1.0 degree_Celsius}
+  preheating_temperature: !weldx!units/quantity-0.1.0 {value: 25, units: !weldx!units/units-0.1.0 degree_Celsius}
+  specific_heat: !weldx!units/quantity-0.1.0 {value: 486, units: !weldx!units/units-0.1.0 joule
+      / kelvin / kilogram}
+  standard: EN 10025-2 / ASTM A36
+  thermal_conductivity: !weldx!units/quantity-0.1.0 {value: 51.9, units: !weldx!units/units-0.1.0 watt
+      / kelvin / meter}
+  thermal_diffusivity: !weldx!units/quantity-0.1.0 {value: 1.3603837383030589e-05,
+    units: !weldx!units/units-0.1.0 meter ** 2 / second}
+process:
+  current: !weldx!units/quantity-0.1.0 {value: 200.0, units: !weldx!units/units-0.1.0 ampere}
+  efficiency: !weldx!units/quantity-0.1.0 {value: 0.8, units: !weldx!units/units-0.1.0 dimensionless}
+  heat_input: !weldx!units/quantity-0.1.0 {value: 768000.0, units: !weldx!units/units-0.1.0 joule
+      / meter}
+  net_power: !weldx!units/quantity-0.1.0 {value: 3840.0, units: !weldx!units/units-0.1.0 watt}
+  power: !weldx!units/quantity-0.1.0 {value: 4800.0, units: !weldx!units/units-0.1.0 watt}
+  process_name: GMAW (Gas Metal Arc Welding)
+  shielding_gas: CO₂ / Ar–CO₂ mix (M21)
+  speed: !weldx!units/quantity-0.1.0 {value: 5.0, units: !weldx!units/units-0.1.0 millimeter
+      / second}
+  voltage: !weldx!units/quantity-0.1.0 {value: 24.0, units: !weldx!units/units-0.1.0 volt}
+  wire_diameter: !weldx!units/quantity-0.1.0 {value: 1.2, units: !weldx!units/units-0.1.0 millimeter}
+  wire_feed: !weldx!units/quantity-0.1.0 {value: 8.0, units: !weldx!units/units-0.1.0 meter
+      / minute}
+...
