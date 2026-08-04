@@ -60,6 +60,8 @@ Open the notebooks in numerical order.
 ## Author
 
 Muhammad Irfan Hazeq
+Shazreen
+ku haziq
 
 Bachelor of Mechanical Engineering
 
